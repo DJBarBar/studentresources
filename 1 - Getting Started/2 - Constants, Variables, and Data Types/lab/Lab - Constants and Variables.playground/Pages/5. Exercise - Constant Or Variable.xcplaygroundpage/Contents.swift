@@ -13,6 +13,6 @@
 var numberLikes = 3
 var numberComments = 5
 let yearCreated = 2016
-let monthCreated = "December"
+let monthCreated = 12
 let dayCreated = 20
 //: [Previous](@previous)  |  page 5 of 10  |  [Next: App Exercise - Fitness Tracker: Constant or Variable?](@next)
