@@ -7,14 +7,15 @@
  */
 let stepGoal = 10000
 let steps = 3948
+let motivator: String
 
-if steps < stepGoal / 2 {
-    print("Almost halfway!")
-} else {
-    print("Over halfway!")
-}
+//if steps < stepGoal / 2 {
+//    print("Almost halfway!")
+//} else {
+//    print("Over halfway!")
+//}
 
-
+motivator = steps < stepGoal / 2 ? "Almost halway!" : "Over halfway!"
 /*:
  
  _Copyright © 2017 Apple Inc._
