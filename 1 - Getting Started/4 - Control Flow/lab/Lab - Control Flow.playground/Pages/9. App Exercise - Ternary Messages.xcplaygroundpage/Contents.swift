@@ -16,6 +16,7 @@ let motivator: String
 //}
 
 motivator = steps < stepGoal / 2 ? "Almost halway!" : "Over halfway!"
+print(motivator)
 /*:
  
  _Copyright © 2017 Apple Inc._

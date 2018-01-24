@@ -26,7 +26,7 @@ let isRaining = true
 let isSunny = true
 let isNiceWeather = isRaining == false && isSunny == true && temp >= 82
 
-if isNiceWeather == true {
+if isNiceWeather {
     print("I'm going for a walk!")
 } else {
     print("I'm staying inside")
