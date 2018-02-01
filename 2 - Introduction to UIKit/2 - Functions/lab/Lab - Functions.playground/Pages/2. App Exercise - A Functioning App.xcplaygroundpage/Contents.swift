@@ -7,7 +7,7 @@
  
  A reoccurring process like this is a perfect candidate for a function. Write a function called `incrementSteps` after the declaration of `steps` below that will increment `steps` by one and then print its value. Call the function multiple times and observe the printouts.
  */
-var steps = 0
+var steps: Double = 0
 func incrementSteps() {
     steps += 1
     print(steps)
@@ -18,15 +18,15 @@ incrementSteps()
 /*:
  Similarly, if you want to regularly provide progress updates to your user, you can put your control flow statements that check on progress into a function. Write a function called `progressUpdate` after the declaration of `goal` below. The function should print "You're off to a good start." if `steps` is less than 10% of `goal`, "You're almost halfway there!" if `steps` is less than half of `goal`, "You're over halfway there!" if `steps` is less than 90% of `goal`, "You're almost there!" if `steps` is less than `goal`, and "You beat your goal!" otherwise. Call the function and observe the printout. Remember, you can convert numbers using the appropriate Int or Double initializer.
  */
-let goal = 10_000
+let goal: Double = 10_000
 func progressUpdate() {
-    if steps <= 1_000 {
+    if steps <= (goal * 0.1) {
         print("You're off to a good start!")
-    } else if steps <= 4_999 {
+    } else if steps <= (goal * 0.49) {
         print("You're almost halfway there!")
-    } else if steps <= 8_999 {
+    } else if steps <= (goal * 0.89) {
         print("You're over halfway there!")
-    } else if steps <= 9_999 {
+    } else if steps <= (goal * 0.9) {
         print("You're almost there!")
     } else {
         print("You beat your goal!")

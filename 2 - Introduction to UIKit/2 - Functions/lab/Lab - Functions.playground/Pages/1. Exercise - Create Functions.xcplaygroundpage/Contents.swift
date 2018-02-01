@@ -12,7 +12,7 @@ introduceMyself()
  */
 import Foundation
 func magicEightBall() {
-    let randomNum = arc4random_uniform(UInt32(UInt(5)))
+    let randomNum = arc4random_uniform(UInt32(5))
     switch randomNum {
     case 1:
         print("You've got to be kidding")

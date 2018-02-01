@@ -17,7 +17,7 @@ almostAddition(23, secondNum: 7)
 /*:
  Write a function called `multiply` that takes two `Double` arguments. The function should multiply the two arguments and print the result. The first argument should not require a label, and the second argument should have an external label, "by", that differs from the internal label. Call the function and observe the printout.
  */
-func multiply(_ firstNum: Double, by secondNum: Double) {
+func multiply(_ firstNum: Double,by secondNum: Double) {
     print(firstNum * secondNum)
 }
 multiply(3, by: 23)

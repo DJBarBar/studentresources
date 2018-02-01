@@ -9,7 +9,7 @@
  */
 func calculatePace(currentDistance: Double, totalDistance: Double, currentTime: Double) -> Double {
     
-    return currentDistance / currentTime
+    return (currentDistance / currentTime) * totalDistance
     
 }
 calculatePace(currentDistance: 5.0, totalDistance: 10.0, currentTime: 30.00)
@@ -18,15 +18,14 @@ calculatePace(currentDistance: 5.0, totalDistance: 10.0, currentTime: 30.00)
  */
 func pacing(currentDistance: Double, totalDistance: Double, currentTime: Double, goalTime: Double) -> String {
     
-    let calPace = calculatePace(currentDistance: 5.0, totalDistance: 10.0, currentTime: 30.0)
-    
-    if calPace <= goalTime {
+    if calculatePace(currentDistance: currentDistance, totalDistance: totalDistance, currentTime: currentTime) <= goalTime {
         return "Keep it up!"
     } else {
         return "You've got to push just a bit harder"
     }
 
 }
+pacing(currentDistance: 5, totalDistance: 6, currentTime: 7, goalTime: 8)
 
 /*:
  
