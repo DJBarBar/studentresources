@@ -22,5 +22,5 @@ print(firstRun)
  Now imagine that throughout the course of the run, you go a distance of 2396 meters in 15.3 minutes, and gain 94 meters of elevation. Update the values of `firstRun`'s properties accordingly. Print a statement about your run using the values of each property.
  */
 firstRun = RunningWorkout(distance: 2396, time: 15.3, elevation: 94)
-print(firstRun)
+print("I ran \(firstRun.distance) meters in \(firstRun.time) minutes at \(firstRun.elevation) meters of elevation.")
 //: [Previous](@previous)  |  page 2 of 10  |  [Next: Exercise - Memberwise and Custom Initializers](@next)
