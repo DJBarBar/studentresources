@@ -40,7 +40,11 @@ class ShieldedShip: Fighter {
     var shieldStrength = 25
     
     override func wasHit() {
-        Spaceship.wasHit(defender)
+        if shieldStrength > 0 {
+            shieldStrength -= 5
+        } else {
+            super.wasHit()
+        }
     }
 }
 let defender = ShieldedShip()

@@ -7,7 +7,7 @@ class Spaceship {
     let name: String
     var health: Int
     var position: Int
-
+    
     func moveLeft() {
         position -= 1
     }
@@ -30,7 +30,7 @@ class Spaceship {
 class Fighter: Spaceship {
     let weapon: String
     var remainingFirePower: Int
-
+    
     func fire() {
         if remainingFirePower > 0 {
             remainingFirePower -= 1
@@ -43,7 +43,7 @@ class Fighter: Spaceship {
         self.weapon = weapon
         self.remainingFirePower = remainingFirePower
         super.init(name: name, health: health, position: position)
-    
+        
     }
 }
 
