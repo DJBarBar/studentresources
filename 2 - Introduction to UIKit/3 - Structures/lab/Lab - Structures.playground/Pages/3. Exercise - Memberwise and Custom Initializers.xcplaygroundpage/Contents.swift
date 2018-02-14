@@ -50,11 +50,11 @@ struct Height {
 /*:
  Now create a variable instance of `Height` called `someonesHeight`. Use the initializer for inches to set the height to 65. Print out the property for height in centimeters and verify that it is equal to 165.1.
  */
-var someonesHeight = Height(heightInInches: 65)
+let someonesHeight = Height(heightInInches: 65)
 print(someonesHeight.heightInCentimeters)
 /*:
  Now create a variable instance of `Height` called `myHeight` and initialize it with your own height. Verify that both `heightInInches` and `heightInCentimeters` are accurate.
  */
-var myHeight = Height(heightInInches: 75)
+let myHeight = Height(heightInInches: 75)
 print(myHeight.heightInCentimeters)
 //: [Previous](@previous)  |  page 3 of 10  |  [Next: App Exercise - Users and Distance](@next)
