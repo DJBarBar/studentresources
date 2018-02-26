@@ -1,8 +1,8 @@
 //
 //  ViewController.swift
-//  Two Buttons
+//  Calculator
 //
-//  Created by Cory Barton on 2/23/18.
+//  Created by Cory Barton on 2/26/18.
 //  Copyright © 2018 Cory Barton. All rights reserved.
 //
 
@@ -21,13 +21,5 @@ class ViewController: UIViewController {
     }
 
 
-    @IBOutlet weak var textLabel: UILabel!
-    @IBOutlet weak var textField: UITextField!
-    @IBAction func setTextButtonTapped(_ sender: Any) {
-        
-    }
-    @IBAction func clearTextButtonTapped(_ sender: Any) {
-        
-    }
 }
 
