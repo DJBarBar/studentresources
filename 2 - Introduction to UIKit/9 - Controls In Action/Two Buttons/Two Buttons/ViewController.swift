@@ -22,12 +22,19 @@ class ViewController: UIViewController {
 
 
     @IBOutlet weak var textLabel: UILabel!
+    
     @IBOutlet weak var textField: UITextField!
+    
+    
+    
     @IBAction func setTextButtonTapped(_ sender: Any) {
-        
-    }
+        textLabel.text = textField.text
+        }
     @IBAction func clearTextButtonTapped(_ sender: Any) {
-        
+        textField.text = ""
+        textLabel.text = ""
     }
 }
+
+
 
