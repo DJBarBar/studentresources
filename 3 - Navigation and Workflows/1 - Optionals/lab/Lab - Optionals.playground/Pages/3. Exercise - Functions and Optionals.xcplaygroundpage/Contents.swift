@@ -3,7 +3,7 @@
  
  If an app asks for a user's age, it may be because the app requires a user to be over a certain age to use some of the services it provides. Write a function called `checkAge` that takes one parameter of type `String`. The function should try to convert this parameter into an `Int` value and then check if the user is over 18 years old. If he/she is old enough, print "Welcome!", otherwise print "Sorry, but you aren't old enough to use our app." If the `String` parameter cannot be converted into an `Int` value, print "Sorry, something went wrong. Can you please re-enter your age?" Call the function and pass in `userInputAge` below as the single parameter. Then call the function and pass in a string that can be converted to an integer.
  */
-let userInputAge: String = "34e"
+var userInputAge: String = "34e"
 func checkAgeAgain(_ usersAge: String) -> Int? {
     if let usersAge = Int(usersAge) {
         return usersAge
@@ -11,6 +11,8 @@ func checkAgeAgain(_ usersAge: String) -> Int? {
         return nil
     }
 }
+
+userInputAge = "34"
 
 if let validUsersAge = checkAgeAgain(userInputAge) {
     if validUsersAge > 18 {
@@ -33,5 +35,16 @@ checkAgeAgain(userInputAge)
 var prices = ["Chips": 2.99, "Donuts": 1.89, "Juice": 3.99, "Apple": 0.50, "Banana": 0.25, "Broccoli": 0.99]
 var stock = ["Chips": 4, "Donuts": 0, "Juice": 12, "Apple": 6, "Banana": 6, "Broccoli": 3]
 
-
+func checkPriceFor(item: String) -> Double? {
+    if let stockTotalForItem = stock[item], stockTotalForItem > 0 {
+        return prices[item]
+    } else {
+        return nil
+    }
+}
+if let priceForItem = checkPriceFor(item: "Donuts") {
+    print("The price for the item Chips is $\(priceForItem)")
+} else {
+    print("The item is out of stock.")
+}
 //: [Previous](@previous)  |  page 3 of 6  |  [Next: App Exercise - Food Functions](@next)

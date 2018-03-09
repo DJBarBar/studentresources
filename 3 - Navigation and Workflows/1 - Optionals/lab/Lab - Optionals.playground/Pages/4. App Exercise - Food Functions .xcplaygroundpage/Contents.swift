@@ -21,6 +21,15 @@ var meals: [String: Meal] = ["Breakfast": Meal(food: ["Bagel", "Orange Juice", "
  
  Write a function that will check to see if your meal log (a dictionary like that in the previous exercise) is saved to the device. If it is, return the meal log. If it isn't, return an empty dictionary of type `[String: Any]`. The code you should use in this exercise for retrieving something saved to the device is `UserDefaults.standard.dictionary(forKey: "mealLog")`. This code will return an optional `[String: Any]`. If it return a value, that is your meal log. If it returns `nil`, then no meal log has been saved. Call the function and print the return value.
  */
+func mealFor(timeFrame: String) -> Meal? {
+    return meals[timeFrame]
+}
 
+if let breakfast = mealFor(timeFrame: "Breakfast") {
+    print("The food in the breakfast is:" )
+    for food in breakfast.food {
+        print(food)
+    }
+}
 
 //: [Previous](@previous)  |  page 4 of 6  |  [Next: Exercise - Failable Initializers](@next)
