@@ -4,10 +4,7 @@
  Define a `Suit` enum with four possible cases: `clubs`, `spades`, `diamonds`, and `hearts`.
  */
 enum Suit {
-    case clubs
-    case spades
-    case diamonds
-    case hearts
+    case clubs, spades, diamonds, hearts
 }
 
 /*:
@@ -46,19 +43,7 @@ struct Card {
     var suit: Suit
     var value: Value
     enum Value {
-        case ace
-        case two
-        case three
-        case four
-        case five
-        case six
-        case seven
-        case eight
-        case nine
-        case ten
-        case jack
-        case queen
-        case king
+        case ace, two, three, four, five, six, seven, eight, nine, ten, jack, queen, king
     }
 }
 var myCard = Card(suit: .hearts, value: .three)
