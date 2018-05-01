@@ -1,7 +1,7 @@
 
 import UIKit
 
-class FurnitureDetailViewController: UIViewController {
+class FurnitureDetailViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     var furniture: Furniture?
     
@@ -29,13 +29,54 @@ class FurnitureDetailViewController: UIViewController {
         furnitureTitleLabel.text = furniture.name
         furnitureDescriptionLabel.text = furniture.description
     }
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String: Any]) {
+        guard let image = info[UIImagePickerControllerOriginalImage] as? UIImage else {return}
+        furniture?.imageData = UIImagePNGRepresentation(image)
+        
+        dismiss(animated: true) {
+            self.updateView()
+        }
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
+    }
     
     @IBAction func choosePhotoButtonTapped(_ sender: Any) {
+        let imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
         
+        let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alertController.addAction(cancelAction)
+        
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            let cameraAction = UIAlertAction(title: "Camera", style: .default, handler: { (_) in imagePicker.sourceType = .camera
+                self.present(imagePicker, animated: true, completion: nil)
+            })
+            alertController.addAction(cameraAction)
+        }
+        
+        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
+            let photoLibraryAction = UIAlertAction(title: "Photo Library", style: .default, handler: { (_) in imagePicker.sourceType = .photoLibrary
+                self.present(imagePicker, animated: true, completion: nil)
+            })
+            alertController.addAction(photoLibraryAction)
+        }
+        
+        present(alertController, animated: true, completion: nil)
     }
-
+    
     @IBAction func actionButtonTapped(_ sender: Any) {
+        guard let furniture = furniture else {return}
+        var items: [Any] = ["\(furniture.name): \(furniture.description)"]
+        if let image = choosePhotoButton.backgroundImage(for: .normal) {
+            items.append(image)
+        }
         
+        let activityController = UIActivityViewController(activityItems: items, applicationActivities: nil)
+        present(activityController, animated: true, completion: nil)
     }
     
 }
