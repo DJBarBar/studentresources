@@ -34,6 +34,40 @@ class EmployeeDetailTableViewController: UITableViewController, UITextFieldDeleg
         }
     }
     
+    var isEditingBirthday : Bool = false {
+        didSet {
+            tableView.beginUpdates()
+            tableView.endUpdates()
+        }
+    }
+    let datePickerIndexPath = IndexPath(row: 2, section: 1)
+    
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        if indexPath.row == datePickerIndexPath.row
+        {
+            
+            if isEditingBirthday
+            {
+                return 216.0
+            }
+            return 0.0
+        }
+        
+        return 44.0
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        if indexPath.row == datePickerIndexPath.row - 1
+        {
+            isEditingBirthday = !isEditingBirthday
+        }
+        
+    }
+    
     @IBAction func saveButtonTapped(_ sender: Any) {
         if let name = nameTextField.text {
             employee = Employee(name: name, dateOfBirth: Date(), employeeType: .exempt)
@@ -51,5 +85,5 @@ class EmployeeDetailTableViewController: UITableViewController, UITextFieldDeleg
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         return false
     }
-
+    
 }
