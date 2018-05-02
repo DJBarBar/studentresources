@@ -20,7 +20,7 @@ class FurnitureDetailViewController: UIViewController, UIImagePickerControllerDe
         if let imageData = furniture.imageData,
             let image = UIImage(data: imageData) {
             choosePhotoButton.setTitle("", for: .normal)
-            choosePhotoButton.setImage(image, for: .normal)
+            choosePhotoButton.setBackgroundImage(image, for: .normal)
         } else {
             choosePhotoButton.setTitle("Choose Image", for: .normal)
             choosePhotoButton.setImage(nil, for: .normal)
