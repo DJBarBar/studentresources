@@ -9,17 +9,28 @@
 import UIKit
 
 class ViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+    
+    @IBOutlet weak var emailOutlet: UITextField!
+    @IBAction func submitButton(_ sender: Any) {
+        if emailOutlet.text == "" {
+            
+            UIView.animate(withDuration: 0.2, animations: {
+                
+                let rightTransform  = CGAffineTransform(translationX: 20, y: 0)
+                self.emailOutlet.transform = rightTransform
+                
+            }) { (_) in
+                
+                UIView.animate(withDuration: 0.2, animations: {
+                    self.emailOutlet.transform = CGAffineTransform.identity
+                })
+            }
+            
+        } else {
+            
+            performSegue(withIdentifier: "toEnteredView", sender: nil)
+        }
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-
 }
+
 
