@@ -18,7 +18,7 @@ extension URL {
 let baseURL = URL(string: "https://itunes.apple.com/search?")!
 
 let query : [String: String] = [
-    "term": "marchmello",
+    "term": "marshmello",
     "media": "music",
     "limit": "10"
 ]
